@@ -1,4 +1,3 @@
-#include <stdio>
 #include <iostream>
 
 void main()
