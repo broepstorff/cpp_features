@@ -1,10 +1,12 @@
 #include <iostream>
 
+#include "oldcpp.h"
 #include "cpp11.h"
 
 int main()
 {
-	std::cout << "cpp_features\n";
+    TestOldCppFeatures();
+	
     return 0;
 }
 

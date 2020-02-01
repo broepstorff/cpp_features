@@ -4,7 +4,8 @@ Figure out cmake debugging (currently have to set "Generate Debug Symbols" = tru
 Organize code a bit 
     probably one header for each category initially, eventually put them in different libs and make the libs compilable as either static or dynamic
 
-pre-c++11 features
+old-c++ features (pre c++11)
+    using namespace
     functions
         declaration/definition
         pass by ref/value
@@ -47,7 +48,9 @@ pre-c++11 features
         fast vs accurate
     pod types (int32_t, int16_t etc)
 
-older c++ standard library features
+old c++ standard library features (pre c++11)
+    iostream
+    fstream
     smart pointers
         unique_ptr
         shared_ptr
@@ -56,8 +59,27 @@ older c++ standard library features
         vector
         unordered_map
         string
-    
+            formatting
     ...
+
+c standard library features
+    file i/o
+    strings
+    concurrency
+        pthread
+        mutex
+    math
+    memmove/memcpy
+    mmap
+    printf/sprintf
+    secure vs non-secure functions
+    ...
+
+Low-level
+    simd
+        sse/mmx
+        arm
+    asm
     
 c++11 features
     c99 preprocessor
@@ -135,23 +157,6 @@ c++20 features
 
 c++20 library features
     ...
-
-
-
-c standard library features
-    file i/o
-    strings
-    concurrency
-        pthread
-        mutex
-    math
-    ...
-
-Low-level
-    simd
-        sse/mmx
-        arm
-    asm
 
 cmake
     +cmaketlists.txt
