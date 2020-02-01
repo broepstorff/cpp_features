@@ -1,14 +1,10 @@
 #include <iostream>
 
-void func()
-{
-    std::cout << "func()\n";
-}
+#include "cpp11.h"
 
 int main()
 {
-    int a = 32;
-    func();
-	std::cout << "hello world 2\n" << "a: " << a << "\n";
+	std::cout << "cpp_features\n";
     return 0;
 }
+

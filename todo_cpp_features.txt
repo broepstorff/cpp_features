@@ -1,0 +1,178 @@
+Figure out xcode headers via cmake (currently have to set "Use Header Maps" = true)
+Figure out cmake debugging (currently have to set "Generate Debug Symbols" = true)
+
+Organize code a bit 
+    probably one header for each category initially, eventually put them in different libs and make the libs compilable as either static or dynamic
+
+pre-c++11 features
+    functions
+        declaration/definition
+        pass by ref/value
+        overloads
+        default values
+    classes
+        declaration/definition
+        private/public/protected
+        inheritance
+        multiple inheritance
+        virtual overloads
+        forward declaration
+    new/delete
+    headers
+    global statics
+    const
+    precompiled headers
+    static libraries
+    dymamic libraries
+    templates
+        class templates
+        function templates
+        class vs typename
+        traits/metapgramming
+    virtual methods
+    overloading
+    operator overloading
+    #pragma
+        once
+        optimise off/on
+        lib
+    macros
+        #
+        ##
+        \
+        () evaluation
+    exceptions (and how to disable them)
+    floating point
+        exceptions
+        fast vs accurate
+    pod types (int32_t, int16_t etc)
+
+older c++ standard library features
+    smart pointers
+        unique_ptr
+        shared_ptr
+        weak_ptr
+    containers
+        vector
+        unordered_map
+        string
+    
+    ...
+    
+c++11 features
+    c99 preprocessor
+    +static_assert
+    right angle brackets
+    extended friend declarations
+    type traits
+    auto
+    delegating constructors
+    extern template
+    constexpr
+    template aliases
+    char16_t and char32_t
+    alignas
+    alignof
+    defaulted and deleted functions
+    strongly-typed enum
+    atomic operations
+    nullptr
+    explicit conversion operations
+    ref-qualifiers
+    unicode string literals
+    raw string literals
+    inline namespaces
+    inheriting constructors
+    trailing function return types
+    unrestricted unions
+    variadic templates
+    expression SFINAE
+    local and unnamed types as template parameters
+    thread-local storage
+    dynamic initializtion of destruction with concurrency (magic statics)
+    Garbage Collection and Reachability-Based Leak Detection
+    Initializer Lists
+    Non-static data member initialization
+    attributes
+    forward enum declarations
+    user-defined literals
+    rvalue references
+    lambda expressions
+    range-for loop
+    noexcept
+    move special member functions
+    override and final
+    decltype
+    other
+        perfect forwarding? (for std::function)
+
+c++11 library features
+    std::move
+    type traits
+    Garbage Collection and Reachability-Based Leak Detection (library support)
+    Money, Time, and hexfloat I/O manipulators
+    other 
+        concurrency
+            threads
+            mutex
+            atomics
+        std::function
+
+c++14 features
+    ...
+    
+c++14 library features
+    ...
+
+c++17 features
+    ...
+
+c++17 library features 
+    ...
+
+c++20 features
+    ...
+
+c++20 library features
+    ...
+
+
+
+c standard library features
+    file i/o
+    strings
+    concurrency
+        pthread
+        mutex
+    math
+    ...
+
+Low-level
+    simd
+        sse/mmx
+        arm
+    asm
+
+cmake
+    +cmaketlists.txt
+    +glob source
+    glob recursive source
+    create project
+        +make a build folder
+        +batch files to configure project
+        +xcode
+        +visual studio
+        make
+    add include paths
+    set compiler flags
+        cross platform
+        per-platform
+    static libs
+    dynamic libs
+    generate executables
+    generate dlls
+    pre-build rules
+    post-build rules
+
+gtest
+    use it to verify runtime features (or just roll your own)
