@@ -1,5 +1,5 @@
-Figure out xcode headers via cmake (currently have to set "Use Header Maps" = true)
-Figure out cmake debugging (currently have to set "Generate Debug Symbols" = true)
++Figure out xcode headers via cmake (currently have to set "Use Header Maps" = true)
+Figure out debugging flags via cmake (currently have to set "Generate Debug Symbols" = true)
 
 Organize code a bit 
     probably one header for each category initially, eventually put them in different libs and make the libs compilable as either static or dynamic
