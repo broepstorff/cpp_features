@@ -2,47 +2,78 @@
 #define oldcpp_h
 
 #include <iostream>
+#include <string>
 
-int BasicFunction(float x)
+void TestOldCppFeatures();
+
+int PassByVal(float x);
+int PassByRef(float &x);
+
+int Overload(int i);
+int Overload(const std::string &s);
+
+int DefaultVal(int i = 1);
+
+inline int InlineFunc(int i)
 {
-    return (int)x+1;
+    return i+4;
 }
 
 class BasicClass
 {
 public:
-    BasicClass(int x)
-        : pIntData(NULL)
+    BasicClass(int x);
+    virtual ~BasicClass();
+    
+    int GetX();
+    inline int GetY()
     {
-        pIntData = new int(x);
+        return y;
     }
     
-    ~BasicClass()
-    {
-        delete pIntData;
-    }
-    
-    int GetData()
-    {
-        return *pIntData;
-    }
-    
+    virtual int GetZ() { return 0; }
 protected:
-    int* pIntData;
+    int* pX;
+    
+private:
+    BasicClass() {}
+    
+    int y;
 };
 
-void TestOldCppFeatures()
+class Derived : public BasicClass
 {
-    using namespace std;
-    cout << "======= old_cpp_features ==========\n";
+public:
+    Derived(int x) : BasicClass(x)
+    {
+        z = 10;
+    }
+    virtual ~Derived() {}
     
-    using namespace std;
-    cout << "Basic Function: " << BasicFunction(1) << endl;
-    
-    BasicClass basicClass(1);
-    cout << "Basic class: " << basicClass.GetData() << endl;
-    
-    cout << endl;
-}
+    int GetZ() { return z; }
+        
+protected:
+    int z;
+};
 
-#endif /* oldcpp_h */
+class OtherClass
+{
+public:
+    OtherClass() : otherData(5) {}
+protected:
+    int otherData;
+};
+
+class MultipleInheritance : public Derived, OtherClass
+{
+public:
+    MultipleInheritance(int x)
+    : Derived(x)
+    {}
+    
+    int GetOtherData() { return otherData; }
+};
+
+class ForwardDeclared* MakeForwardDeclared();
+
+#endif //oldcpp_h

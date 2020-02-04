@@ -5,23 +5,34 @@ Organize code a bit
     probably one header for each category initially, eventually put them in different libs and make the libs compilable as either static or dynamic
 
 old-c++ features (pre c++11)
-    using namespace
-    functions
-        declaration/definition
-        pass by ref/value
-        overloads
-        default values
-    classes
-        declaration/definition
-        private/public/protected
-        inheritance
-        multiple inheritance
-        virtual overloads
-        forward declaration
+    +using namespace
+    +functions
+        +declaration/definition
+        +pass by ref/value
+        +overloads
+        +default values
+        +inline
+    +classes
+        +declaration/definition
+        +methods, fields
+        +private/public/protected
+        +inline method
+        +inheritance
+        +multiple inheritance
+        +virtual overloads
+        +forward declaration
+    casting
+        c-style
+        static
+        const
+        dynamic w/ rtti
     new/delete
     headers
     global statics
     const
+        variables
+        methods
+        pointers (both const ptr and const value)
     precompiled headers
     static libraries
     dymamic libraries

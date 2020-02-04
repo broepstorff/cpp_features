@@ -18,6 +18,14 @@ message("CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
 message("CMAKE_STANDARD_LIBRARIES: ${CMAKE_STANDARD_LIBRARIES}")
 message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 message("CMAKE_XCODE_PLATFORM_TOOLSET: ${CMAKE_XCODE_PLATFORM_TOOLSET}")
+message("APPLE: " ${APPLE})
+message("UNIX: " ${UNIX})
+message("WIN32: " ${WIN32})
+message("CMAKE_SYSTEM: " ${CMAKE_SYSTEM})
+message("ENV: " ${ENV})
+message("MSVC: " ${MSVC})
+message("MSVC_VERSION: " ${MSVC_VERSION})
+message("XCODE_VERSION: " ${XCODE_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -25,10 +33,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories("src")
 file(GLOB_RECURSE sources "src/*.cpp")
 file(GLOB_RECURSE headers "src/*.h")
-SET(all_sources ${sources} ${headers})
 
-message("Headers:")
+if("${CMAKE_GENERATOR}" MATCHES "Xcode")
+    set(all_sources ${sources} ${headers})
+else()
+    set(all_sources ${sources})
+endif()
+
+message("==== Sources: ====")
+print_list_prefix("   " "${sources}")
+
+message("==== Headers: ====")
 print_list_prefix("   " "${headers}")
+
 
 add_executable(
     cpp_features 
