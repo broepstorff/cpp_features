@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "oldcpp.h"
-#include "cpp11.h"
+#include "oldcpp/oldcpp.h"
+#include "oldcpp/cpp11.h"
 
 int main()
 {
     TestOldCppFeatures();
-	
+    TestCpp11Features();
     return 0;
 }
 

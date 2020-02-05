@@ -1,5 +1,8 @@
-+Figure out xcode headers via cmake (currently have to set "Use Header Maps" = true)
-Figure out debugging flags via cmake (currently have to set "Generate Debug Symbols" = true)
+cmake
+    +Figure out xcode headers via cmake (currently have to set "Use Header Maps" = true)
+        +Add them the sources list, it seem to figure it out
+    Get Xcode project folders to mirror directories on disk (can we still use GLOB_RECURSE?
+    Set Xcode debugging flags via cmake (currently have to set "Generate Debug Symbols" = true manually)
 
 Organize code a bit 
     probably one header for each category initially, eventually put them in different libs and make the libs compilable as either static or dynamic
@@ -12,6 +15,7 @@ old-c++ features (pre c++11)
         +overloads
         +default values
         +inline
+        varargs    
     +classes
         +declaration/definition
         +methods, fields
@@ -25,6 +29,9 @@ old-c++ features (pre c++11)
         +c-style
         +static        
         +dynamic w/ rtti
+    main
+        return value
+        argc/argv
     new/delete
     headers
     global statics
@@ -53,6 +60,7 @@ old-c++ features (pre c++11)
         ##
         \
         () evaluation
+        varargs
     exceptions (and how to disable them)
     floating point
         exceptions
@@ -61,6 +69,7 @@ old-c++ features (pre c++11)
 
 old c++ standard library features (pre c++11)
     iostream
+        formatting
     fstream
     smart pointers
         unique_ptr
@@ -83,6 +92,7 @@ c standard library features
     memmove/memcpy
     mmap
     printf/sprintf
+        number formatting
     secure vs non-secure functions
     ...
 
@@ -99,6 +109,9 @@ c++11 features
     extended friend declarations
     type traits
     auto
+        basic pod type
+        pointers
+        template args
     delegating constructors
     extern template
     constexpr
@@ -138,6 +151,8 @@ c++11 features
     decltype
     other
         perfect forwarding? (for std::function)
+        template varargs?
+        return value optimization?
 
 c++11 library features
     std::move

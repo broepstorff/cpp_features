@@ -1,5 +1,9 @@
 #include "oldcpp.h"
 
+#include <iostream>
+#include <cassert>
+
+//macros
 #define SAFE_DELETE(pointer) \
     delete pointer; \
     pointer = NULL;

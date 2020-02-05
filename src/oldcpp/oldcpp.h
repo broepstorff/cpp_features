@@ -1,9 +1,7 @@
 #ifndef oldcpp_h
 #define oldcpp_h
 
-#include <iostream>
 #include <string>
-#include <cassert>
 
 void TestOldCppFeatures();
 
