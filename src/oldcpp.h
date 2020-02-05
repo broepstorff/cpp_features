@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cassert>
 
 void TestOldCppFeatures();
 
@@ -50,7 +51,7 @@ public:
     }
     virtual ~Derived() {}
     
-    int GetZ() { return z; }
+    virtual int GetZ() { return z; }
         
 protected:
     int z;

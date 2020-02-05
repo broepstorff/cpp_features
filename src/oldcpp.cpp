@@ -66,6 +66,7 @@ void TestOldCppFeatures()
     
     using namespace std;
     
+    //Functions
     {
         float f = 1;
         string s = "str";
@@ -75,7 +76,11 @@ void TestOldCppFeatures()
         cout << "Overload(string): " << Overload(s) << endl;
         cout << "DefaultVal: " << DefaultVal() << endl;
         cout << "InlineFunc: " << InlineFunc(1) << endl;
+    }
     
+    //Classes
+    {
+        //Inheritance
         BasicClass basicClass(1);
         cout << "BasicClass: " << basicClass.GetX() << " " << basicClass.GetY() << " " << basicClass.GetZ() << endl;
         Derived derivedClass(2);
@@ -86,11 +91,20 @@ void TestOldCppFeatures()
         cout << "ForwardDeclared: " << pFD->data << endl;
         SAFE_DELETE(pFD);
         
+        //Casting
         BasicClass* cCast = (BasicClass*)&derivedClass;
         cout << "C-Cast: " << cCast->GetX() << " " << cCast->GetY() << " " << cCast->GetZ() << endl;
-        BasicClass* staticCast = static_cast<BasicClass*>(&derivedClass);
-        cout << "Static Cast: " << staticCast->GetX() << " " << staticCast->GetY() << " " << staticCast->GetZ() << endl;
-    
-        cout << endl;
+        BasicClass *pStaticCast = static_cast<BasicClass*>(&derivedClass);
+        cout << "Static Cast: " << pStaticCast->GetX() << " " << pStaticCast->GetY() << " " << pStaticCast->GetZ() << endl;
+        Derived *pDnyamicDownCast = dynamic_cast<Derived*>(pStaticCast);
+        assert(pDnyamicDownCast);
+        cout << "Dynamic Downcast: " << pDnyamicDownCast->GetZ() << endl;
+        BasicClass *pDynamicUpCast = dynamic_cast<BasicClass*>(&derivedClass);
+        assert(pDynamicUpCast);
+        cout << "Dymamic Upcast: " << pDynamicUpCast->GetZ() << endl;
+        Derived *pInvalidDynamicCast = dynamic_cast<Derived*>(&basicClass);
+        assert(!pInvalidDynamicCast);
     }
+    
+    cout << endl;
 }

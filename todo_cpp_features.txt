@@ -21,11 +21,10 @@ old-c++ features (pre c++11)
         +multiple inheritance
         +virtual overloads
         +forward declaration
-    casting
-        c-style
-        static
-        const
-        dynamic w/ rtti
+    +casting
+        +c-style
+        +static        
+        +dynamic w/ rtti
     new/delete
     headers
     global statics
@@ -33,6 +32,7 @@ old-c++ features (pre c++11)
         variables
         methods
         pointers (both const ptr and const value)
+        const casting
     precompiled headers
     static libraries
     dymamic libraries
