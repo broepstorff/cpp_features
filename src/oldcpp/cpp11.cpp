@@ -17,7 +17,13 @@ void TestCpp11Features()
     cout << "Auto: " << f << " " << *pF << endl;
     //todo verify type: something like: cout << "Auto typeof: " << typeof(float) << endl;
     
-    
+    {
+        constexpr int a = 3;
+        constexpr int b = 5;
+        constexpr const int aPlusB = a + b;
+        static_assert(aPlusB == 8, "");
+        //todo constexpr if ?
+    }
     
     cout << endl;
 }

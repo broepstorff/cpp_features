@@ -109,12 +109,13 @@ c++11 features
     extended friend declarations
     type traits
     auto
-        basic pod type
-        pointers
+        +basic pod type
+        +pointers
         template args
     delegating constructors
     extern template
     constexpr
+        constexpr if? is that cpp14?
     template aliases
     char16_t and char32_t
     alignas
