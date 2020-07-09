@@ -26,7 +26,7 @@ int Overload(int i)
 
 int Overload(const std::string &s)
 {
-    return s.size();
+    return static_cast<int>(s.size());
 }
 
 int DefaultVal(int i)
@@ -67,8 +67,6 @@ void TestOldCppFeatures()
 {
     using namespace std;
     cout << "======= old_cpp_features ==========\n";
-    
-    using namespace std;
     
     //built-in types
     {
